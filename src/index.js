@@ -11,26 +11,26 @@ const responses = (
   state = { feeling: 0, support: 0, understanding: 0, comments: "" },
   action
 ) => {
-  () => {
-    const newState = { ...state };
-    switch (action.type) {
-      case "ADD_FEELING":
-        newState.feeling = action.payload;
-        break;
-      case "ADD_SUPPORT":
-        newState.support = action.payload;
-        break;
-      case "ADD_UNDERSTANDING":
-        newState.understanding = action.payload;
-        break;
-      case "ADD_COMMENTS":
-        newState.comments = action.payload;
-        break;
-      case "ADD_FEELING":
-        newState.feeling = action.payload;
-    }
-    return newState;
-  };
+  let newState = { ...state };
+
+  switch (action.type) {
+    case "ADD_FEELING":
+      newState.feeling = action.payload;
+      return newState;
+    case action.type === "ADD_SUPPORT":
+      newState.support = action.payload;
+      return newState;
+    case action.type === "ADD_UNDERSTANDING":
+      newState.understanding = action.payload;
+      return newState;
+    case action.type === "ADD_COMMENTS":
+      newState.comments = action.payload;
+      return newState;
+    case action.type === "ADD_FEELING":
+      newState.feeling = action.payload;
+      return newState;
+  }
+
   return state;
 };
 
@@ -44,6 +44,8 @@ const storeInstance = createStore(
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App store={storeInstance} />
+    <Provider store={storeInstance}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
