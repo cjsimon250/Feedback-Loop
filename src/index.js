@@ -17,16 +17,16 @@ const responses = (
     case "ADD_FEELING":
       newState.feeling = action.payload;
       return newState;
-    case action.type === "ADD_SUPPORT":
+    case "ADD_SUPPORT":
       newState.support = action.payload;
       return newState;
-    case action.type === "ADD_UNDERSTANDING":
+    case "ADD_UNDERSTANDING":
       newState.understanding = action.payload;
       return newState;
-    case action.type === "ADD_COMMENTS":
+    case "ADD_COMMENTS":
       newState.comments = action.payload;
       return newState;
-    case action.type === "ADD_FEELING":
+    case "ADD_FEELING":
       newState.feeling = action.payload;
       return newState;
   }
