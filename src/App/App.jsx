@@ -2,11 +2,13 @@ import React from "react";
 import axios from "axios";
 import "./App.css";
 
-import FeelingForm from "../FeelingForm";
+import { HashRouter as Router, Route, Link } from "react-router-dom";
+
+import FeelingForm from "../FeelingForm/FeelingForm";
 import CommentsForm from "../CommentsForm/CommentsForm";
-import SupportForm from "../SupportForm";
+import SupportForm from "../SupportForm/SupportForm";
 import UnderstandingForm from "../UnderstandingForm/UnderstandingForm";
-import ReviewSubmissions from "../ReviewSubmissions";
+import ReviewSubmissions from "../ReviewSubmissions/ReviewSubmissions";
 
 function App() {
   return (
@@ -20,14 +22,17 @@ function App() {
       <Route exact path="/">
         <FeelingForm />
       </Route>
-      <Route exact path="/form">
-        <Form />
+      <Route exact path="/understanding">
+        <UnderstandingForm />
       </Route>
-      <Route exact path="/checkout">
-        <Checkout />
+      <Route exact path="/support">
+        <SupportForm />
       </Route>
-      <Route exact path="/admin">
-        <Admin />
+      <Route exact path="/comments">
+        <CommentsForm />
+      </Route>
+      <Route exact path="/review">
+        <ReviewSubmissions />
       </Route>
     </Router>
   );
