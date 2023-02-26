@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-
+import "./ReviewSubmissions.css";
 import axios from "axios";
 
 import { useSelector } from "react-redux";
@@ -61,12 +61,13 @@ function ReviewSubmissions() {
         </Table>
       </TableContainer>
       <Button
+        id="submit-btn"
         variant="contained"
         size="small"
         onClick={handleSubmit}
-        style={{ marginTop: 40 }}
+        style={{ marginTop: 40, marginRight: 40 }}
       >
-        Next
+        Submit
       </Button>
     </div>
   );
