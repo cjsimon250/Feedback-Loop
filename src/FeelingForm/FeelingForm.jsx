@@ -10,12 +10,15 @@ function FeelingForm() {
   //function to send input to reducer and route
   //user to the next form
   let handleSubmit = () => {
-    dispatch({
-      type: "ADD_FEELING",
-      payload: Number(rating),
-    });
-
-    history.push("/understanding");
+    if (rating === 0) {
+      alert("Not a valid answer. Please try again.");
+    } else {
+      dispatch({
+        type: "ADD_FEELING",
+        payload: Number(rating),
+      });
+      history.push("/understanding");
+    }
   };
   return (
     <>
@@ -27,7 +30,7 @@ function FeelingForm() {
           setRating(evt.target.value);
         }}
       >
-        <option value="">Please choose an option</option>
+        <option value="0">Please choose an option</option>
         <option value="5">5</option>
         <option value="4">4</option>
         <option value="3">3</option>

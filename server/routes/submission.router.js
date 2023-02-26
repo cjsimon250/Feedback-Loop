@@ -18,8 +18,7 @@ router.post("/", (req, res) => {
       resStatus.send(201);
     })
     .catch((err) => {
-      alert(`error in submission router post`);
-      console.log(err);
+      console.log(`error in submission router post`, err);
     });
 });
 

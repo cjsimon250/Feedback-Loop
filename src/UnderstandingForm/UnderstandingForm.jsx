@@ -10,12 +10,15 @@ function UnderstandingForm() {
   //function to send input to reducer and route
   //user to the next form
   let handleSubmit = () => {
-    dispatch({
-      type: "ADD_UNDERSTANDING",
-      payload: Number(rating),
-    });
-
-    history.push("/support");
+    if (rating === 0) {
+      alert("Not a valid answer. Please try again.");
+    } else {
+      dispatch({
+        type: "ADD_UNDERSTANDING",
+        payload: Number(rating),
+      });
+      history.push("/support");
+    }
   };
   return (
     <>
