@@ -9,6 +9,7 @@ import CommentsForm from "../CommentsForm/CommentsForm";
 import SupportForm from "../SupportForm/SupportForm";
 import UnderstandingForm from "../UnderstandingForm/UnderstandingForm";
 import ReviewSubmissions from "../ReviewSubmissions/ReviewSubmissions";
+import SubmitSuccess from "../SubmitSucess/SubmitSuccess";
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
       </Route>
       <Route exact path="/review">
         <ReviewSubmissions />
+      </Route>
+      <Route exact path="/submissionSuccess">
+        <SubmitSuccess />
       </Route>
     </Router>
   );

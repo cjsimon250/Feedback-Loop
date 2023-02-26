@@ -21,7 +21,7 @@ function ReviewSubmissions() {
         alert("error in handleSubmit", err);
       });
 
-    history.push("/");
+    history.push("/submissionSuccess");
   }
 
   return (

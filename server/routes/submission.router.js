@@ -15,9 +15,10 @@ router.post("/", (req, res) => {
       newSubmisson.comments,
     ])
     .then((result) => {
-      resStatus.send(201);
+      res.sendStatus(201);
     })
     .catch((err) => {
+      res.sendStatus(500);
       console.log(`error in submission router post`, err);
     });
 });
