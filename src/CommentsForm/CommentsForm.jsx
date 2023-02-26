@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
+import "./CommentsForm.css";
 
 //all material ui components
 import { TextField, FormControl, Button } from "@mui/material";
@@ -22,8 +23,8 @@ function CommentsForm() {
   };
   return (
     <>
-      <h3>Any comments you would like to make?</h3>
-      <FormControl>
+      <h3 id="question">Any comments you would like to make?</h3>
+      <FormControl id="comments-form">
         <TextField
           style={{ width: 400 }}
           placeholder="Comment"

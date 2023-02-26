@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
+import "./FeelingForm.css";
 
 //all material ui components
 import {
@@ -32,35 +33,40 @@ function FeelingForm() {
   };
   return (
     <>
-      <h3>How are you feeling today? </h3>
-      <p>5: Awesome</p>
-      <p>1: Not Great</p>
-      <FormControl style={{ width: 250, textAlign: "center" }}>
-        <InputLabel>Feeling</InputLabel>
-        <Select
-          labelId="feeling-select-label"
-          id="feeling-select"
-          defaultValue={0}
-          variant="outlined"
-          label="Feeling"
-          onChange={(evt) => {
-            setRating(evt.target.value);
-          }}
+      <h3 id="question">How are you feeling today? </h3>
+      <div id="feeling-form">
+        <p>5: Awesome</p>
+        <p>1: Not Great</p>
+        <FormControl
+          id="feeling-input"
+          style={{ width: 250, textAlign: "center" }}
         >
-          <MenuItem value="0">Please choose an option</MenuItem>
-          <MenuItem value="5">5</MenuItem>
-          <MenuItem value="4">4</MenuItem>
-          <MenuItem value="3">3</MenuItem>
-          <MenuItem value="2">2</MenuItem>
-          <MenuItem value="1">1</MenuItem>
-        </Select>
-        <FormHelperText style={{ paddingBottom: 30 }}>
-          Select a rating
-        </FormHelperText>
-        <Button variant="contained" size="small" onClick={handleSubmit}>
-          Next
-        </Button>
-      </FormControl>
+          <InputLabel>Feeling</InputLabel>
+          <Select
+            labelId="feeling-select-label"
+            id="feeling-select"
+            defaultValue={0}
+            variant="outlined"
+            label="Feeling"
+            onChange={(evt) => {
+              setRating(evt.target.value);
+            }}
+          >
+            <MenuItem value="0">Please choose an option</MenuItem>
+            <MenuItem value="5">5</MenuItem>
+            <MenuItem value="4">4</MenuItem>
+            <MenuItem value="3">3</MenuItem>
+            <MenuItem value="2">2</MenuItem>
+            <MenuItem value="1">1</MenuItem>
+          </Select>
+          <FormHelperText style={{ paddingBottom: 30 }}>
+            Select a rating
+          </FormHelperText>
+          <Button variant="contained" size="small" onClick={handleSubmit}>
+            Next
+          </Button>
+        </FormControl>
+      </div>
     </>
   );
 }
