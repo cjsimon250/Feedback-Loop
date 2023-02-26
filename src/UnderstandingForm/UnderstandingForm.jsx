@@ -32,7 +32,7 @@ function UnderstandingForm() {
   };
   return (
     <>
-      <h1>How well did you understand today's material? </h1>
+      <h3>How well did you understand today's material? </h3>
       <p>5: Awesome</p>
       <p>1: Not Great</p>
       <FormControl style={{ width: 250, textAlign: "center" }}>

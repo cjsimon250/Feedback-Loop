@@ -5,6 +5,17 @@ import axios from "axios";
 
 import { useSelector } from "react-redux";
 
+//all material ui components
+import {
+  TableContainer,
+  Table,
+  TableBody,
+  TableHead,
+  TableRow,
+  TableCell,
+  Button,
+} from "@mui/material";
+
 function ReviewSubmissions() {
   const history = useHistory();
 
@@ -27,27 +38,36 @@ function ReviewSubmissions() {
   return (
     <div>
       <div>
-        <h1>Answers </h1>
+        <h3>Answers: </h3>
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Feeling</th>
-            <th>Support</th>
-            <th>Understanding</th>
-            <th>Comments</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{answers.feeling}</td>
-            <td>{answers.support}</td>
-            <td>{answers.understanding}</td>
-            <td>{answers.comments}</td>
-          </tr>
-        </tbody>
-      </table>
-      <button onClick={handleSubmit}>Submit</button>
+      <TableContainer>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell align="center">Feeling</TableCell>
+              <TableCell align="center">Support</TableCell>
+              <TableCell align="center">Understanding</TableCell>
+              <TableCell align="center">Comments</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            <TableRow>
+              <TableCell align="center">{answers.feeling}</TableCell>
+              <TableCell align="center">{answers.support}</TableCell>
+              <TableCell align="center">{answers.understanding}</TableCell>
+              <TableCell align="center">{answers.comments}</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </TableContainer>
+      <Button
+        variant="contained"
+        size="small"
+        onClick={handleSubmit}
+        style={{ marginTop: 40 }}
+      >
+        Next
+      </Button>
     </div>
   );
 }

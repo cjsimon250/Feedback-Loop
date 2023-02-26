@@ -1,5 +1,8 @@
 import { useHistory } from "react-router-dom";
 
+//material ui components
+import { Button } from "@mui/material";
+
 function SubmitSuccess() {
   const history = useHistory();
 
@@ -7,13 +10,15 @@ function SubmitSuccess() {
     <>
       <h1>🎉SUCCESS🎉</h1>
       <p>That was fun.. Try Again?</p>
-      <button
+      <Button
+        variant="contained"
+        size="small"
         onClick={() => {
           history.push("/");
         }}
       >
         Try Again
-      </button>
+      </Button>
     </>
   );
 }

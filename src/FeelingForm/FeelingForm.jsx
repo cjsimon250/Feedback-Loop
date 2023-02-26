@@ -32,7 +32,7 @@ function FeelingForm() {
   };
   return (
     <>
-      <h1>How are you feeling today? </h1>
+      <h3>How are you feeling today? </h3>
       <p>5: Awesome</p>
       <p>1: Not Great</p>
       <FormControl style={{ width: 250, textAlign: "center" }}>
