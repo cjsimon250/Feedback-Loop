@@ -2,6 +2,16 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
 
+//all material ui components
+import {
+  FormControl,
+  FormHelperText,
+  InputLabel,
+  Button,
+  Select,
+  MenuItem,
+} from "@mui/material";
+
 function UnderstandingForm() {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -25,19 +35,32 @@ function UnderstandingForm() {
       <h1>How well did you understand today's material? </h1>
       <p>5: Awesome</p>
       <p>1: Not Great</p>
-      <select
-        onChange={(evt) => {
-          setRating(evt.target.value);
-        }}
-      >
-        <option value="">Please choose an option</option>
-        <option value="5">5</option>
-        <option value="4">4</option>
-        <option value="3">3</option>
-        <option value="2">2</option>
-        <option value="1">1</option>
-      </select>
-      <button onClick={handleSubmit}>Next</button>
+      <FormControl style={{ width: 250, textAlign: "center" }}>
+        <InputLabel>Understanding</InputLabel>
+        <Select
+          labelId="understanding-select-label"
+          id="understanding-select"
+          defaultValue={0}
+          variant="outlined"
+          label="Understanding"
+          onChange={(evt) => {
+            setRating(evt.target.value);
+          }}
+        >
+          <MenuItem value="0">Please choose an option</MenuItem>
+          <MenuItem value="5">5</MenuItem>
+          <MenuItem value="4">4</MenuItem>
+          <MenuItem value="3">3</MenuItem>
+          <MenuItem value="2">2</MenuItem>
+          <MenuItem value="1">1</MenuItem>
+        </Select>
+        <FormHelperText style={{ paddingBottom: 30 }}>
+          Select a rating
+        </FormHelperText>
+        <Button variant="contained" size="small" onClick={handleSubmit}>
+          Next
+        </Button>
+      </FormControl>
     </>
   );
 }
