@@ -19,7 +19,7 @@ function CommentsForm() {
   };
   return (
     <>
-      <h1>How are you feeling today? </h1>
+      <h1>Any comments you would like to make?</h1>
 
       <input
         type="text"

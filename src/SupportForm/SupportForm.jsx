@@ -20,7 +20,8 @@ function SupportForm() {
   return (
     <>
       <h1>How supported did you feel today?</h1>
-      <p>5 being awesome and 1 being not great</p>
+      <p>5: Awesome</p>
+      <p>1: Not Great</p>
       <select
         onChange={(evt) => {
           setRating(evt.target.value);

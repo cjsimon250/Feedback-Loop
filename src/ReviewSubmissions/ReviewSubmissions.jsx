@@ -27,16 +27,27 @@ function ReviewSubmissions() {
   return (
     <div>
       <div>
-        <h1>Review </h1>
+        <h1>Answers </h1>
       </div>
-
-      <button
-        onClick={() => {
-          handleSubmit;
-        }}
-      >
-        Submit
-      </button>
+      <table>
+        <thead>
+          <tr>
+            <th>Feeling</th>
+            <th>Support</th>
+            <th>Understanding</th>
+            <th>Comments</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{answers.feeling}</td>
+            <td>{answers.support}</td>
+            <td>{answers.understanding}</td>
+            <td>{answers.comments}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button onClick={handleSubmit}>Submit</button>
     </div>
   );
 }

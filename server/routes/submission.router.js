@@ -15,7 +15,7 @@ router.post("/", (req, res) => {
       newSubmisson.comments,
     ])
     .then((result) => {
-      res.send(201);
+      resStatus.send(201);
     })
     .catch((err) => {
       alert(`error in submission router post`);
