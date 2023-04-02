@@ -6,4 +6,4 @@ This app is meant to be a reflection/feedback form modeled after the daily refle
 
 ## Technologies Used
 
-HTML5, CSS3, Javascript, React.js, axios, express.js, node.js, PostgreSQL, and Material UI.
+HTML5, CSS3, Javascript, Redux, React.js, axios, express.js, node.js, PostgreSQL, and Material UI.
